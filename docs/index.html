@@ -31,6 +31,11 @@
             noData: 'No matches found!',
             paths: 'auto',
             depth: 3
+            },
+            hook: {
+              doneEach() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }
             }
         }
     </script>
