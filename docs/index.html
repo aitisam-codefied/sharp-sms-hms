@@ -14,15 +14,33 @@
             font-family: 'Open Sans', sans-serif;
             font-weight: 600;
         }
+        #backToTop {
+          position: fixed;
+          bottom: 30px;
+          right: 20px;
+          background: #007bff;
+          color: white;
+          padding: 10px 14px;
+          border-radius: 6px;
+          cursor: pointer;
+          font-size: 13px;
+          display: none;
+          z-index: 9999;
+        }
     </style>
 </head>
 <body>
-    <div id="app">Loading...</div>
+    <div id="app">
+        Loading...
+        <div id="backToTop" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">⬆ Top</div>
+    </div>
     <script>
         window.$docsify = {
             name: 'Sharp SMS HMS',
             repo: '',
+            loadNavbar: true,
             loadSidebar: true,
+            loadFooter: true,
             subMaxLevel: 3,
             scrollToTop: true,
             search: {
@@ -38,6 +56,11 @@
               }
             }
         }
+
+        window.addEventListener("scroll", function () {
+            const btn = document.getElementById("backToTop");
+            btn.style.display = window.scrollY > 300 ? "block" : "none";
+        });
     </script>
     <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
     <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
