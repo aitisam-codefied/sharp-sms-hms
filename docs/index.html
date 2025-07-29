@@ -23,9 +23,18 @@
             name: 'Sharp SMS HMS',
             repo: '',
             loadSidebar: true,
-            subMaxLevel: 2,
+            subMaxLevel: 3,
+            scrollToTop: true,
+            search: {
+            maxAge: 86400000,
+            placeholder: 'Search...',
+            noData: 'No matches found!',
+            paths: 'auto',
+            depth: 3
+            }
         }
     </script>
     <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+    <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
 </body>
 </html>
